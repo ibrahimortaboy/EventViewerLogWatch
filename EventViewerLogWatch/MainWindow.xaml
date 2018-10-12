@@ -1,0 +1,68 @@
+﻿<Window x:Class="EventViewerLog.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EventViewerLog"
+        mc:Ignorable="d"
+        Title="Event Viewer Log Watch" Height="300" Width="500" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Closing="Window_Closing" Icon="program.ico">
+    <Grid Margin="10">
+        <StackPanel Orientation="Vertical">
+            <Grid Height="22" Margin="0,0,0,5">
+                <Label Content="Event Log" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="0"/>
+                <ComboBox x:Name="cb_eventLog" VerticalAlignment="Center" SelectedIndex="0" Margin="130,0,0,0" Cursor="Hand">
+                    <ComboBoxItem Content="Application"/>
+                    <ComboBoxItem Content="Security"/>
+                    <ComboBoxItem Content="Setup"/>
+                    <ComboBoxItem Content="System"/>
+                </ComboBox>
+            </Grid>
+            <Grid Height="22" Margin="0,0,0,5">
+                <Label Content="Event Lavel" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="0"/>
+                <ComboBox x:Name="cb_eventLavel" VerticalAlignment="Center" SelectedIndex="1" Margin="130,0,0,0" Cursor="Hand">
+                    <ComboBoxItem Content="1"/>
+                    <ComboBoxItem Content="2"/>
+                    <ComboBoxItem Content="3"/>
+                    <ComboBoxItem Content="4"/>
+                </ComboBox>
+            </Grid>
+            <Grid Height="22" Margin="0,0,0,5">
+                <Label Content="Event Id" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="0"/>
+                <TextBox x:Name="txb_eventId" TextWrapping="Wrap" Text="1000" Margin="130,0,0,0" VerticalContentAlignment="Center"/>
+            </Grid>
+            <Grid Height="22" Margin="0,0,0,5">
+                <Label Content="Event Data Search" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="0"/>
+                <TextBox x:Name="txb_eventDataSearch" TextWrapping="Wrap" Text="Satellite.exe" Margin="130,0,0,0" VerticalContentAlignment="Center"/>
+            </Grid>
+            <Grid Height="22" Margin="0,0,0,5">
+                <Label Content="Event Process Path" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="0"/>
+                <TextBox x:Name="txb_eventProcessPath" TextWrapping="Wrap" Text="C:\Program Files\NBS\satellite\" Margin="130,0,0,0" VerticalContentAlignment="Center"/>
+            </Grid>
+            <Grid Height="22" Margin="0,0,0,5">
+                <Label Content="Event Last Date" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="0"/>
+                <TextBox x:Name="txb_eventLastDate" TextWrapping="Wrap" Margin="130,0,0,0" VerticalContentAlignment="Center"/>
+            </Grid>
+        </StackPanel>
+        <Grid Margin="0,162,0,27">
+            <Label Content="Event Data" HorizontalAlignment="Left" VerticalAlignment="Top" Padding="0"/>
+            <TextBox x:Name="txb_eventData" TextWrapping="Wrap" Margin="130,0,0,0" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        </Grid>
+        <Grid VerticalAlignment="Bottom" Height="22">
+            <Label Content="Event Count(New/Total)" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="0"/>
+            <StackPanel Margin="130,0,0,0" Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBox x:Name="txb_eventCountNew" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="30" HorizontalContentAlignment="Center" IsReadOnly="True" Text="0"/>
+                <Label Content="/" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="0" Margin="2,0"/>
+                <TextBox x:Name="txb_eventCount" TextWrapping="Wrap" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="30" HorizontalContentAlignment="Center" IsReadOnly="True" Text="0"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,70,0" HorizontalAlignment="Right">
+                <Label Content="Interval" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="0" Margin="0,0,2,0"/>
+                <TextBox x:Name="txb_timerH" TextWrapping="Wrap" Text="0" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="30" HorizontalContentAlignment="Center"/>
+                <Label Content=":" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="0" Margin="2,0"/>
+                <TextBox x:Name="txb_timerM" TextWrapping="Wrap" Text="10" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="30" HorizontalContentAlignment="Center"/>
+                <Label Content=":" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="0" Margin="2,0"/>
+                <TextBox x:Name="txb_timerS" TextWrapping="Wrap" Text="0" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="30" HorizontalContentAlignment="Center"/>
+            </StackPanel>
+            <Button x:Name="bt_start" Content="Start" Width="50" HorizontalAlignment="Right" Click="bt_start_Click" Cursor="Hand"/>
+        </Grid>
+    </Grid>
+</Window>
