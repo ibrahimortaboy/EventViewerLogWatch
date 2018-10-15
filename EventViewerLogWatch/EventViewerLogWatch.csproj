@@ -38,6 +38,9 @@
   <PropertyGroup>
     <ApplicationIcon>program.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>EventViewerLogWatch.App</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />

@@ -19,7 +19,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 
-namespace EventViewerLog
+namespace EventViewerLogWatch
 {
     public partial class MainWindow : Window
     {
@@ -42,7 +42,7 @@ namespace EventViewerLog
                 System.Windows.Application.Current.Shutdown();
             }
 
-            Stream iconPath = System.Windows.Application.GetResourceStream(new Uri("pack://application:,,,/EventViewerLog;component/program.ico")).Stream;
+            Stream iconPath = System.Windows.Application.GetResourceStream(new Uri("pack://application:,,,/EventViewerLogWatch;component/program.ico")).Stream;
             //String iconPath = @Environment.GetEnvironmentVariable("PROGRAMFILES") + "\\" + softComp + "\\" + softName + "\\icon\\" + "program.ico";
             //System.Windows.Forms.MessageBox.Show(iconPath);
             ni = new System.Windows.Forms.NotifyIcon();
